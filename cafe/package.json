@@ -1,0 +1,37 @@
+{
+  "name": "opos-cafe",
+  "productName": "OPOS Restoran",
+  "version": "1.0.0",
+  "description": "OPOS Restoran - masaüstü giriş proqramı",
+  "main": "main.js",
+  "author": "OPOS",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "pack:win": "electron-packager . \"OPOS Restoran\" --platform=win32 --arch=x64 --out=dist --overwrite",
+    "build:win": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3",
+    "electron-packager": "^17.1.2"
+  },
+  "build": {
+    "appId": "az.opos.opos-cafe",
+    "productName": "OPOS Restoran",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "files": [
+      "main.js",
+      "package.json"
+    ]
+  }
+}
